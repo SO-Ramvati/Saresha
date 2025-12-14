@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharesha - Avatar Chatbot</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS - Horizontal Layout -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- LEFT SIDEBAR: Logo, Avatar, Mode Selection -->
+        <div class="left-sidebar">
+            <!-- Header with Logo -->
+            <div class="app-header">
+                <img src="/static/images/bot_logo.png"
+                     alt="Sharesha Logo"
+                     class="app-logo">
+            </div>
+            <p class="app-subtitle">Your Academic & Personal Companion</p>
+            
+            <!-- Divider Line -->
+            <div class="divider"></div>
+            
+            <!-- Avatar Display -->
+            <div class="avatar-container">
+                <img src="/static/images/academic_avatar.png" 
+                     alt="Current Avatar" 
+                     id="avatar-img">
+                <div id="avatar-name">Gandalf</div>
+            </div>
+            
+            <!-- Mode Selection -->
+            <div class="top-controls">
+                <!-- Academic Mode -->
+                <div class="mode-card">
+                    <img src="/static/images/academic_avatar.png" 
+                         alt="Gandalf" 
+                         class="mode-avatar">
+                    <button class="mode-btn academic active" onclick="setMode('academic')">
+                        <i class="fas fa-graduation-cap"></i> Academic Mode<br>
+                        <small>Study plans, quizzes & tasks</small>
+                    </button>
+                </div>
+                
+                <!-- Personal Mode -->
+                <div class="mode-card">
+                    <img src="/static/images/personal_avatar.png" 
+                         alt="Samwise" 
+                         class="mode-avatar">
+                    <button class="mode-btn personal" onclick="setMode('personal')">
+                        <i class="fas fa-smile"></i> Personal Mode<br>
+                        <small>Chat, stories & support</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RIGHT SIDE: Chat Area -->
+        <div class="right-chat-area">
+            <!-- Chat Window -->
+            <div class="chat-window">
+                <div id="chat-messages">
+                    <div class="welcome-message">
+                        Select a mode to start chatting
+                    </div>
+                </div>
+                <div class="typing-indicator" id="typing">
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Input Area -->
+            <div class="input-area">
+                <input type="text" 
+                       id="user-input" 
+                       placeholder="Type your message..." 
+                       onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">
+                    Send <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
